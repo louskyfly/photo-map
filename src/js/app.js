@@ -74,6 +74,6 @@ export async function initApp() {
   }
 
   if ('serviceWorker' in navigator) {
-    try { await navigator.serviceWorker.register('/sw.js'); } catch (e) {}
+    try { await navigator.serviceWorker.register('./sw.js'); } catch (e) {}
   }
 }
