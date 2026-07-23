@@ -59,7 +59,7 @@ export async function initApp() {
       if (screenRenderers[action]) {
         router.navigate(action);
       } else if (action === 'about') {
-        showToast('Explore v1.0.0 - Rallye Découverte PWA', 'info', 4000);
+        showToast('PhotoMap v1.0.0 - Rallye Découverte PWA', 'info', 4000);
       }
     });
   });
@@ -74,6 +74,6 @@ export async function initApp() {
   }
 
   if ('serviceWorker' in navigator) {
-    try { await navigator.serviceWorker.register('./sw.js'); } catch (e) {}
+    try { await navigator.serviceWorker.register('/sw.js'); } catch (e) {}
   }
 }
