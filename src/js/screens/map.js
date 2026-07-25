@@ -605,6 +605,10 @@ function startProximityWatch() {
   if (proximityWatchId) return;
   if (!navigator.geolocation) return;
 
+  if ('Notification' in window && Notification.permission === 'default') {
+    Notification.requestPermission();
+  }
+
   proximityWatchId = navigator.geolocation.watchPosition(
     pos => {
       const { latitude, longitude } = pos.coords;
